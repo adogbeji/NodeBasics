@@ -1,9 +1,8 @@
-// const helpers = require('./helpers');
-const { sum } = require('./helpers');
+const http = require('http');
 
-// function sum(a, b) {
-//     return a + b;
-// }
+const server = http.createServer(function(req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello from Node');
+});
 
-const total = sum(100, 700);
-console.log(total);
+server.listen(3000);
