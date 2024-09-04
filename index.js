@@ -1,8 +1,4 @@
-const http = require('http');
+const fs = require('fs');
 
-const server = http.createServer(function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello from Node');
-});
-
-server.listen(3000);
+fs.watch('target.txt', () => console.log('File changed...'));
+console.log('Now watching target.txt for file changes');
